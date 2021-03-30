@@ -1,0 +1,28 @@
+<?php
+
+use yii\db\Migration;
+
+/**
+ * Handles the creation of table `{{%users}}`.
+ */
+class m210326_203038_create_users_table extends Migration
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function safeUp()
+    {
+        $this->createTable('{{%users}}', [
+            'id' => $this->primaryKey(),
+			'name' => $this->string(100)->comment('Имя пользователя')
+        ]);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function safeDown()
+    {
+        $this->dropTable('{{%users}}');
+    }
+}
